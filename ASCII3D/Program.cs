@@ -5,9 +5,11 @@ namespace ASCII3D
     class Program
     {
         private static Vector2 resolution;
+        private static List<Shape> worldShapes;
         private static char[,] screen;
         private static Vector3 camPos;
         private static Vector2 lookAngles;
+        private static int fov;
         private static void Main(string[] args)
         {
             resolution = new Vector2(20, 20);
@@ -19,8 +21,7 @@ namespace ASCII3D
         }
         private static void RenderLoop()
         {
-            //test stuff
-            Vector3 point = new Vector3(0, 0, 10);
+            CastRay(camPos, lookAngles);
             
             while (true)
             {
@@ -39,6 +40,12 @@ namespace ASCII3D
                 Console.Write(renderStr);
                 Thread.Sleep(16);
             }
+        }
+        private static char CastRay(Vector3 point, Vector2 angles)
+        {
+            // .:-=+*#%@
+
+
         }
     }
 }
